@@ -18,6 +18,12 @@ public class ClientwsApplication implements WebMvcConfigurer {
 		registry.addMapping("/**")
 				.allowedOrigins("http://localhost:5173")
 				.allowedMethods("GET", "POST", "PUT", "DELETE")
-				.allowedHeaders("Authorization", "Content-Type");
+				.allowedHeaders("*")
+				.allowCredentials(true);
+		registry.addMapping("/**")
+				.allowedOrigins("http://localhost:3000")
+				.allowedMethods("GET", "POST", "PUT", "DELETE")
+				.allowedHeaders("*")
+				.allowCredentials(true);
 	}
 }
